@@ -81,8 +81,6 @@ hist(totalnumberofsteps1, main= "Total Number of Steps per Day",
 ## Are there differences in activity patterns between weekdays and weekends?
 ```{r results='hide'}
 NewCol <- matrix(nrow = nrow(data1))
-NewCol <- data.frame(NewCol)
-cbind(data1,NewCol)
 for (i in 1:nrow(data1)){
   if (weekdays(data1[i,2]) == "sabado"){
     data1[i,4] <- "weekend"
@@ -94,5 +92,7 @@ for (i in 1:nrow(data1)){
       }
   }
 }
+NewCol <- data.frame(NewCol)
+cbind(data1,NewCol)
 ```
 
